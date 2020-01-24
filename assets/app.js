@@ -45,9 +45,18 @@ database.ref().on("value", function(snapshot) {
             // Console logging response.events to 'see' JSON object
           //  console.log(JSON.parse(response));
             var temp = JSON.parse(response);
-            console.log(temp.events.event[0].latitude);
-            var lat = temp.events.event[i].latitude;
-            var lng = temp.events.event[i].longitude;
+            var eventName = temp.events.event[i].title;
+            var eventAddress = temp.events.event[i].venue_address;
+            var eventVenue = temp.events.event[i].venue_name;
+            var eventStartTime = temp.events.event[i].start_time;
+            var eventLat = temp.events.event[i].latitude;
+            var eventLng = temp.events.event[i].longitude;
+            var imageURLsmall = temp.events.event[i].image.small.url;
+            var imageURLmed= temp.events.event[i].image.medium.url;
+            var eventURL = temp.events.event[i].url;
+            
+        console.log(eventName, eventAddress, eventVenue, eventStartTime, eventLat, eventLng, imageURLsmall, imageURLmed, eventURL)
+
         }
     });
 
